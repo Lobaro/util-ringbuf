@@ -80,6 +80,9 @@
 ((S+1)*sizeof(T))
 
 //BUF = pointer. All of the macros deal with the pointer.
+// S = Size of buffer
+// T = Type of buffer elements
+// pM = pointer to allocated memory of type T
 #define drv_rbuf_init(BUF, S, T, pM) \
    do { \
 	  (BUF)->size = (S)+1; \
