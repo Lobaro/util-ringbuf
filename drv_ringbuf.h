@@ -77,7 +77,7 @@
 //Get needed (static) memSize (useful when declaring static memory array)
 //e.g. TYPE rx_rbuf_mem[drv_rbuf_neededMemBytes(ITEM_COUNT, TYPE)];
 #define drv_rbuf_neededMemBytes(S,T) \
-((S+1)*sizeof(T))
+((S)*sizeof(T))
 
 //BUF = pointer. All of the macros deal with the pointer.
 // S = Size of buffer
@@ -85,7 +85,7 @@
 // pM = pointer to allocated memory of type T
 #define drv_rbuf_init(BUF, S, T, pM) \
    do { \
-	  (BUF)->size = (S)+1; \
+	  (BUF)->size = (S); \
 	  (BUF)->start = 0;  /*aka read pointer*/ \
 	  (BUF)->end = 0;    /*aka write pointer*/ \
 	  (BUF)->elems = (T*) (pM);\
