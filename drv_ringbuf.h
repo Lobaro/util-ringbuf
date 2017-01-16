@@ -155,6 +155,7 @@
 #define drv_rbuf_peekReadPtrWithOffset(BUF, pELEM, offset) \
     pELEM = &((BUF)->elems[locStartIndex(BUF, offset)]);
 
+/*
 //Get pointer of type <*T> from current read position + LOC
 //can be iterated in a loop LOC[0...ELEMENT_COUNT] to count elements
 //#define peekLocBufferReadPointer(BUF, pELEM, LOC) \
@@ -165,7 +166,7 @@
 //			pELEM = &((BUF)->elems[locStartIndex(BUF,LOC)]);\
 //			}\
 //		} while(0)
-
+*/
 #define drv_rbuf_elements(BUF, pNUM) \
 		do { \
 			(*(pNUM)) = 0;\
